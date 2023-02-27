@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/registerstyle.css">
+</head>
+<body>
+    <section class="register_container">
+        <form action="/login" method="POST" class="form">
+            <header>Login</header>
+            <div class="indv_label">
+                <label for="email">Email</label>
+            </div>
+            <div class="indv_input">
+                <input type="email" id="email" name="username" placeholder="Enter your email" />
+            </div>
+            <div class="indv_label">
+                <label for="password">Password</label>
+            </div>
+            <div class="indv_input">
+                <input type="password" id="password" name="password" placeholder="Enter your password" />
+            </div>
+            <div class="indv_btn">
+                <button type="submit" id="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- <script>
+        const submitBtn = document.getElementById("submit");
+        submitBtn.addEventListener("click", (e)=>{
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            //console.log(name,password);
+            
+            async function postLogin(){
+
+                const data = await fetch("/login-post",{
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }, 
+                    body: JSON.stringify({ email, password})
+                })
+                const results = await data.json();
+                if(results){
+                    localStorage.setItem("chat-app", JSON.stringify(results));
+                    window.location.assign(`${window.location.origin}/chat`);
+                }
+            }
+            postLogin();
+        })
+    </script> -->
+</body>
+</html>
